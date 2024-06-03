@@ -1,1 +1,503 @@
 # library
+#include<iostream>
+#include<string>
+#include<fstream>
+using namespace std;
+
+class Library
+{
+	private:
+    string name;
+    string address;
+   public:
+  Library()
+  {
+   name = " ";
+   address = " ";
+  }
+  void setname( string n)
+  {
+ name = n;
+  }
+  string getname()
+  {
+   return name;
+  }
+  void setaddress( string ad)
+  {
+   address = ad;
+  }
+  string getaddress()
+  {
+  return address;
+  }
+  void display()
+  {
+  cout<<" enter libraray name :";
+  cin>>name;
+  cout<<" enter library address :";
+  cin>>address;
+  }
+};
+
+class Book 
+{
+	private :
+	string title;
+	string author;
+	string publisher;
+	int year;
+	double  price ;
+	public:
+   Book()
+   {
+    title = " ";
+    author = " ";
+    publisher = " ";
+    year = 0;
+    price = 0 ;
+   }
+	void settitle( string t)
+	{
+    title = t;	
+	}
+	string gettitle()	
+	{
+   return title;
+	}
+  void setauthor( string a)	
+  {
+ author = a;
+  }
+  string getauthor()
+  {
+   return  author ;
+  }
+  void setpublisher( string p)
+  {
+  publisher = p;
+  }
+  string getpublisher()
+  {
+  return publisher;
+  }
+  void setyear( int y)
+  {
+  year = y;
+  }
+  int getyear()
+  {
+  return year;
+  }
+  void setprice( double pe)
+  {
+   price = pe;
+  }
+  double getprice()
+  {
+   return price;
+  }
+  void display()
+  {
+  cout<<" enter title :";
+  cin>>title;
+  cout<<" enter author :";
+  cin>>author;
+  cout<<"enter publisher : ";
+  cin>>publisher;
+  cout<<" enter year :";
+  cin>>year;
+  cout<<" enter price : ";
+  cin >> price ;
+  }
+};
+
+class AddBook
+{
+	private :
+	string title;
+	string author;
+	string publisher;
+	public:
+    AddBook(string title, string author, string publisher)
+  {
+	title = title;
+	author = author;
+	publisher= publisher;
+	}
+   bool validation()
+   {
+  string title, author, publisher;
+  ifstream file("AddBook.txt");
+  if(file.is_open())
+  {
+  getline(file, title);
+   getline(file, author);
+  getline(file, publisher);
+  file.close();
+    if(title==title && author==author );
+{
+if(publisher==publisher);
+    }
+  {
+    return true;
+   }
+   }
+   else return false;
+   }
+		
+};
+
+class Member
+{
+	private :
+	string name ;
+	string address;
+	int memberid ;
+	public:
+	Member()
+	{
+	name = " " ;
+	address  = " " ;
+	memberid  = 0 ;
+	}
+	void setname( string na)
+	{
+    name = na;
+	}
+   string getname()
+   {
+   return name;
+   }
+   void setaddress( string a)
+   {
+   address = a;
+   }
+  string getadress()
+  {
+   return address;
+  }
+  void setmemberid( int id)
+  {
+   memberid = id;
+  }
+  int getmemberid()
+  {
+  return memberid;
+  }
+  void display()
+  {
+  cout<< " enter  member name: ";
+  cin>>name;
+  cout<<" enter  member address :" ;
+  cin>>address ;
+  cout<<" enter memberid :" ;
+  cin >>memberid;
+  }
+};
+
+class Librarian
+{
+ private :
+   string name ;
+  int employeeid ;
+	public :
+	Librarian()
+	{
+	name = " " ;
+	employeeid = 0;
+	}
+  void setname( string ne) 
+  {
+  name = ne;
+  }
+  string getname()
+  {
+   return name;
+  }
+  void setemployeeid( int ed)
+  {
+   employeeid = ed;
+  }
+  int getemployeeid()
+  {
+  return employeeid;
+  }
+  void display()
+  {
+ cout<< " enter librarain name :" ;
+ cin>>name;
+ cout<<" enter liabrarian  employeeid : ";
+ cin>>employeeid;
+  }
+};
+
+class Notification
+{
+   private :
+    int notificationid ;
+    string message;
+    public :
+   Notification()
+   {
+  notificationid = 0;
+  message = " ";
+   }
+   void setnotificationid( int  nt)
+{
+	notificationid = nt ;
+}
+  int getnotificationid()
+  {
+  return  notificationid ;
+  }
+  void setmessage( string mg)
+  {
+   message = mg;
+  }
+  string getmessage()
+  {
+   return message;
+  }
+  void display()
+  {
+ cout<< " enter notificationid :" ;
+ cin>>notificationid;
+ cout<<" enter the message : " ;
+ cin>>message ;
+  }
+};
+
+class Report
+{
+   private:
+   int reportid ;
+   string content ;
+   string reportdate;
+   public:
+   Report()
+   {
+   reportid = 0;
+   content = " " ;
+   reportdate = " " ;
+   }
+   void setreportid( int rd)
+   {
+   reportid =  rd ;
+   }
+   int getreportid()
+   {
+   return reportid;
+   }
+   void setcontent( string c)
+   {
+   content = c ;
+   }
+   string getcontent()
+   {
+    return content;
+   }
+   void setreportdate( string pd)
+   {
+   reportdate = pd ;
+   }
+   string getreportdate()
+   {
+   return  reportdate ;
+   }
+   void display()
+   {
+   cout<<" enter the  reportid : " ;
+   cin>>reportid;
+   cout<<" enter the  content : " ;
+    cin>>content;
+    cout<<" enter the reportdate :  " ;
+    cin>>reportdate;
+   }
+};
+
+class Login
+ {
+private:
+    string username;
+    string password;
+
+public:
+    Login(string u, string p)
+	{
+  username=u; 
+  password=p;
+	}	
+   bool validation()
+
+  {
+   string un,pw;
+   ifstream file("login.txt");
+   if (file.is_open())
+	{
+   getline(file, un);
+   getline(file, pw);
+    file.close();
+    if (username == un && password == pw) {
+    return true;
+    }
+    }
+	else
+    return false;
+    }
+ };
+
+class Manager
+{
+   private:
+  string name;
+  string department;
+  int managerid;
+  public:
+  Manager()
+  {
+    name = " " ;
+    department = " ";
+    managerid = 0;
+}
+    void set( string na)
+    {
+   name = na ;
+	}
+	string getname()
+	{
+    return name ;
+	}
+ void setdepartment( string da)
+ {
+   department  = da ;
+ }
+ string getdepartment()
+ {
+   return department;
+ }
+ void setmanagerid( int ma)
+ {
+   managerid  =  ma ;
+ }
+ int getmanagerid()
+ {
+ return managerid;
+ }
+ void display()
+ { 
+   cout<<" enter manger name : " ;
+   cin>> name ;
+   cout<<" enter department  : " ;
+   cin>>department;
+   cout<<" enter managerid : " ;
+   cin>>managerid;
+ }
+	};		
+
+int main()
+{
+	string username,password;
+  cout<<"username ";
+	cin>>username;
+  cout<<"password ";
+	cin>>password;
+	Login login(username, password);
+
+    if (login.validation())
+  {
+    cout << "Login successful!" << endl;
+    } 
+	else
+  {
+    cout << "Incorrect username or password." << endl;
+    }
+    string title, author, publisher;
+    cout<<"title: ";
+    cin>>title;
+    cout<<"author: ";
+    cin>>author;
+    cout<<"publisher: ";
+    cin>>publisher;
+    AddBook AddBook(title, author, publisher);
+    
+    if (AddBook.validation())
+	{
+	cout<<"book add successfully: "<<endl;
+	}
+    else
+	{
+	cout<<"invalidation: "<<endl;
+	}
+	
+    int choice;
+	do
+    {
+    cout << "\nMenu\n";
+  cout << "1. Enter Library Information\n";
+   cout << "2. Enter Book Information\n";
+   cout << "3. Enter Member Information\n";
+    cout << "4. Enter Librarian Information\n";
+   cout << "5. Enter Notification Information\n";
+   cout << "6. Enter Report Information\n";
+   cout << "7. Exit\n";
+   cout << "Enter your choice: ";
+    cin >> choice;
+    switch(choice)
+   {
+  case 1:
+   {
+   Library lib;
+    lib.display();
+   break;
+    }
+    case 2:
+   {
+    Book book;
+    book.display();
+   break;
+   }
+   case 3:
+    {
+    Member member;
+   member.display();
+    break;
+    }
+    case 4:
+    {
+    Librarian librarian;
+    librarian.display();
+   break;
+    }
+   case 5:
+   {
+    Notification notification;
+   notification.display();
+   break;
+   }
+    case 6:
+    {
+   Report report;
+  report.display();
+   break;
+    }
+    case 7:
+  {
+    Manager manager;
+   manager.display();
+    break ;
+  }
+    case 8 :
+	{
+    cout << "Exiting..." << endl;
+    break;
+    default:
+    cout << "Invalid choice! Please try again." << endl;
+  }
+}
+}
+	while(choice != 7);
+
+    return 0;
+
+}
